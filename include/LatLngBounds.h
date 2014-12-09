@@ -1,6 +1,9 @@
 #include <stdlib.h>
 #include "LatLng.h"
 
+#ifndef _LATLNGBOUNDS_H_
+#define _LATLNGBOUNDS_H_
+
 /*!
  * Bounds structure for latitude and longitude coordinates. It's made up of a northeast and southwest point that represent
  * a diagonal of a rectangle.
@@ -45,3 +48,5 @@ int latlngbounds_contains(LatLng *, LatLngBounds *);
  * @param tofree LatLngBounds * instance to free
  */
 void latlngbounds_free(LatLngBounds *);
+
+#endif

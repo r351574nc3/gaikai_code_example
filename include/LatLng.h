@@ -1,5 +1,8 @@
 #include <stdlib.h>
 
+#ifndef _LATLNG_H_
+#define _LATLNG_H_
+
 #define LAT_BOUND 90
 #define LNG_BOUND 180
 
@@ -73,3 +76,4 @@ int latlng_wrap(int, int);
  * \return newly clamped coordinates
  */
 int latlng_clamp(int, int);
+#endif

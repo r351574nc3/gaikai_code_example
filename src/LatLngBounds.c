@@ -52,23 +52,23 @@ int latlngbounds_contains(LatLng * point, LatLngBounds * bounds) {
     int retval = 1;
     if (point->lat > 0) {
         if (point->lat >= bounds->ne->lat) {
-            return false;
+            return 0;
         }
     }
     else {
         if (point->lat <= bounds->sw->lat) {
-            return false;
+            return 0;
         }
     }
 
     if (point->lng > 0) {
         if (point->lng >= bounds->ne->lng) {
-            return false;
+            return 0;
         }
     }
     else {
         if (point->lng <= bounds->sw->lng) {
-            return false;
+            return 0;
         }
     }
     return retval;
