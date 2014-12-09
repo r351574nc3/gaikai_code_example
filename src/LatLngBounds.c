@@ -1,4 +1,5 @@
 #include "LatLngBounds.h"
+#include <stdio.h>
 
 /** 
  * @mainpage Gaikai Code Example Overview

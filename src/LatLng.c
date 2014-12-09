@@ -1,4 +1,5 @@
 #include "LatLng.h"
+#include <stdio.h>
 
 /**
  * @file 
@@ -37,7 +38,9 @@ void latlng_free(LatLng * tofree) {
  * \param bound boundary used to calculate the wrapped coordinate
  * \return newly wrap coordinates
  */
-int latlng_wrap(int coord, int bound) {
+int latlng_wrap(int coord, int bound) { 
+    coord = coord % (bound * 2);
+
     if (coord > 0 && coord > bound) {
         int interval = coord - bound;
         return (-1 * bound) + interval;
@@ -55,14 +58,14 @@ int latlng_wrap(int coord, int bound) {
  *
  * \param coord number coordinate to wrap
  * \param bound boundary used to calculate the clamped coordinate
- * \return newly clamped coordinates
+ * \return newly clamped coordinates. This can be the bound - 1 if it exceeds the bound.
  */
 int latlng_clamp(int coord, int bound) {
     if (coord > 0 && coord > bound) {
-        return bound;
+        return bound - 1;
     }
     if (coord < 0 && coord < (-1 * bound)) {
-        return (-1 * bound);
+        return (-1 * (bound - 1));
     }
     return coord;
 }
