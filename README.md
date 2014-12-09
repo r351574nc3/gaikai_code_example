@@ -57,3 +57,10 @@ check_LatLngBounds.c:40:P:Core:lng_out_bounds:0: Passed
 ==17055== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
 ```
 
+Documentation
+--------------
+
+For documentation, run:
+```
+doxygen Doxygenfile
+```
