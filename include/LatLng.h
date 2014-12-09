@@ -27,7 +27,10 @@
  * compute another point, you have to create a new one.
  */
 struct LatLng_s {
+    //! Latitude 
     int lat;
+
+    //! Longitude
     int lng;
 };
                                                 
