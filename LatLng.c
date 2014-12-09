@@ -36,9 +36,3 @@ int latlng_clamp(int coord, int bound) {
     return coord;
 }
 
-int latlng_lat(LatLng * latlng);
-
-int latlng_lng(LatLng * latlng);
-
-int latlng_equals(LatLng * source, LatLng * other);
-
