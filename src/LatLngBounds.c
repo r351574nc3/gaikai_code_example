@@ -26,7 +26,9 @@
  * @return retval instance of LatLngBounds *
  */
 LatLngBounds * latlngbounds_init(LatLng * ne, LatLng * sw) {
-    LatLngBounds * retval = (LatLngBounds *)malloc(sizeof(LatLngBounds));
+    LatLngBounds * retval = (LatLngBounds *)malloc(sizeof(struct LatLngBounds_s));
+    retval->ne = ne;
+    retval->sw = sw;
     return retval;
 }
 
@@ -50,6 +52,7 @@ void latlngbounds_free(LatLngBounds * tofree) {
  */
 int latlngbounds_contains(LatLng * point, LatLngBounds * bounds) {
     int retval = 1;
+
     if (point->lat > 0) {
         if (point->lat >= bounds->ne->lat) {
             return 0;
@@ -71,5 +74,6 @@ int latlngbounds_contains(LatLng * point, LatLngBounds * bounds) {
             return 0;
         }
     }
+
     return retval;
 }

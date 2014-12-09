@@ -14,7 +14,7 @@
  * \return LatLng * instance
  */
 LatLng * latlng_init(int lat, int lng, int no_wrap) {
-    LatLng * retval = (LatLng *) malloc(sizeof(LatLng));
+    LatLng * retval = (LatLng *) malloc(sizeof(struct LatLng_s));
 
     retval->lat = no_wrap ? lat : latlng_clamp(lat, LAT_BOUND);
     retval->lng = no_wrap ? lng : latlng_wrap(lng, LNG_BOUND);
