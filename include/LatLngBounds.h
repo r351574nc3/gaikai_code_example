@@ -28,4 +28,9 @@ LatLngBounds * latlngbounds_init(LatLng *, LatLng *);
  */
 int latlngbounds_contains(LatLng *, LatLngBounds *);
 
+/*!
+ * Frees memory from all connected objects of the given <code>LatLngBounds *</code> instance
+ *
+ * \param LatLngBounds * instance to free
+ */
 void latlngbounds_free(LatLngBounds *);
