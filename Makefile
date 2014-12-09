@@ -9,4 +9,7 @@ OBJS	:= ${SRCS:.c=.o}
 	$(CC) $(CFLAGS) -c *.c 
 
 all : $(OBJS)
-	$(LD) -o LatLng.so $(OBJS)
+	$(LD) -lc $(OBJS) -o LatLngBounds.a
+
+clean :
+	rm *.o

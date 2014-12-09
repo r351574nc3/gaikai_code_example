@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "LatLng.h"
 
 struct LatLngBounds_s {
@@ -26,3 +27,5 @@ LatLngBounds * latlngbounds_init(LatLng *, LatLng *);
  * \return 1 for true or 0 for false
  */
 int latlngbounds_contains(LatLng *, LatLngBounds *);
+
+void latlngbounds_free(LatLngBounds *);
