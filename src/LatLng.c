@@ -41,11 +41,14 @@ void latlng_free(LatLng * tofree) {
 int latlng_wrap(int coord, int bound) { 
     coord = coord % (bound * 2);
 
+    // Assume bound is always positive
+    bound = bound < 0 ? bound * -1 : bound;  
+
     if (coord > 0 && coord > bound) {
         int interval = coord - bound;
         return (-1 * bound) + interval;
     }
-    if (coord < 0 && coord < bound) {
+    if (coord < 0 && coord < (bound * -1)) {
         int interval = (coord - bound) * -1;
         return (-1 * bound) - interval;
     }

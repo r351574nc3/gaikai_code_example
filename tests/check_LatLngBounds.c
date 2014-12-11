@@ -152,17 +152,18 @@ Suite * latlng_suite(void) {
 
     /* Core test case */
     tc_core = tcase_create("Core");
-
-    tcase_add_test(tc_core, lat_in_bounds);
+    
+    /* tcase_add_test(tc_core, lat_in_bounds);
     tcase_add_test(tc_core, lat_out_bounds);
     tcase_add_test(tc_core, lat_out_bounds_nowrap);
     tcase_add_test(tc_core, lat_out_bounds_clamp);
     tcase_add_test(tc_core, lat_out_bounds_clamp2);
     tcase_add_test(tc_core, lng_in_bounds);
     tcase_add_test(tc_core, lng_out_bounds);
-    tcase_add_test(tc_core, lng_out_bounds2);
+    tcase_add_test(tc_core, lng_out_bounds2);*/
     tcase_add_test(tc_core, lng_out_bounds_wrap);
-    tcase_add_test(tc_core, lng_out_bounds_nowrap);
+    
+    // tcase_add_test(tc_core, lng_out_bounds_nowrap);
     suite_add_tcase(s, tc_core);
     
     return s;
