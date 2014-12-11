@@ -14,12 +14,6 @@ To run tests, just execute the following after building:
 make check
 ```
 
-To verify memory leaks with tests, run:
-```
-CK_FORK=no valgrind --leak-check=full ./tests/check_LatLngBounds
-```
-
-The result should be something like:
 ```
 ============================================================================
 Testsuite summary for r351574nc3 1.0
@@ -34,7 +28,13 @@ Testsuite summary for r351574nc3 1.0
 ============================================================================
 ```
 
+To verify memory leaks with tests, run:
+```
+CK_FORK=no valgrind --leak-check=full ./tests/check_LatLngBounds
+```
 The `CK_FORK=no` environment variable prevents Check from forking which prevents orphaned references from the fork which looks like:
+
+The result should be something like:
 ```
 ==17055== Memcheck, a memory error detector
 ==17055== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
